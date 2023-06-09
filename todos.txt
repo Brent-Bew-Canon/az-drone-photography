@@ -1,14 +1,9 @@
-Do pricing pages
-
-Include Cart Page
-
-Hide not needed pages on navbar for all pages
-
-Fix portfolio link on navbar
-
 Apply correct footer to all pages
 
 Upload correct photos and videos
 
 Include payment processor
 
+Fix cart page when select link from pricing page, autopopulates a radio button instead of p tag
+
+Fix Name of pages and titles
