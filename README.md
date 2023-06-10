@@ -1,4 +1,4 @@
-# Photography Photo Shoot Planner
+# Arizona Drone Photography Website
 
 ## Description
 This web application is designed for a real estate photography business to show it's portfolio and attract customers.
