@@ -1,9 +1,3 @@
-Apply correct footer to all pages
-
-Upload correct photos and videos
-
 Include payment processor
 
 Fix cart page when select link from pricing page, autopopulates a radio button instead of p tag
-
-Fix Name of pages and titles
