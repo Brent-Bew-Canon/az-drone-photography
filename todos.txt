@@ -1,3 +1,8 @@
-Include payment processor
+MVP TODOS:
+-Radio button on checkout form to select which product; autopopulates based on pricing product selection
+-form redirects via javascript to checkout link
 
-Fix cart page when select link from pricing page, autopopulates a radio button instead of p tag
+
+Further Development:
+-Include Stripe payment processor via Ruby server
+
