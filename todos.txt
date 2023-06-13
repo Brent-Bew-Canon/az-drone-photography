@@ -1,8 +1,0 @@
-MVP TODOS:
--Radio button on checkout form to select which product; autopopulates based on pricing product selection
--form redirects via javascript to checkout link
-
-
-Further Development:
--Include Stripe payment processor via Ruby server
-
