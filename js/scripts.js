@@ -3,5 +3,15 @@
 * Copyright 2013-2023 Start Bootstrap
 * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-modern-business/blob/master/LICENSE)
 */
-// This file is intentionally blank
-// Use this file to add JavaScript to your project
+
+const serviceBtn = document.querySelectorAll('.package_button')
+
+let val = 0
+
+serviceBtn.forEach(btn => {
+    btn.addEventListener("click", async (event) => {
+        val = event.target.dataset.value
+        window.location.href = (`/cart.html?service=${val}`)
+    })
+});
+

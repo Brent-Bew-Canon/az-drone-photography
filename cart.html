@@ -51,11 +51,21 @@
                     <div class="row gx-5 justify-content-center">
                         <div class="col-lg-8 col-xl-6">
                             <form id="checkout" data-sb-form-api-token="">
-                                <!-- Name input-->
-                                <div class="form-floating mb-3 fs-5 py-1">
-                                    <p class="fw-bold">Package:</p>
-                                    <p id="package-selection">15 Drone Photos</p>
+                                <!-- Service input-->
+                                <div class=" mb-3">
+                                    <label class="ps-1" for="photos">*Select a Service</label>
+                                    <select id="photos" class="form-select" aria-label="Default select example"
+                                        data-sb-validations="required">
+                                        <option selected>*Choose A Service</option>
+                                        <option id="drone-8" value="1">8 Drone Photos</option>
+                                        <option id="15drone" value="2">15 Drone Photos</option>
+                                        <option id="30drone" value="3">30 Drone Photos</option>
+                                    </select>
+
                                 </div>
+                                <div class="invalid-feedback" data-sb-feedback="photos:required">Photos are required.
+                                </div>
+                                <!-- Name input-->
                                 <div class="form-floating mb-3">
                                     <input class="form-control" id="name" type="text" placeholder="Enter your name..."
                                         data-sb-validations="required" />
@@ -110,34 +120,11 @@
                                 </div>
                                 <!-- Submit Button-->
                                 <div class="d-grid"><button class="btn btn-primary btn-lg disabled" id="submitButton"
-                                        type="submit">Submit</button></div>
+                                        type="submit">Continue -></button></div>
                             </form>
                         </div>
                     </div>
                 </div>
-                <!-- Contact cards-->
-                <!-- <div class="row gx-5 row-cols-2 row-cols-lg-4 py-5">
-                        <div class="col">
-                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-chat-dots"></i></div>
-                            <div class="h5 mb-2">Chat with us</div>
-                            <p class="text-muted mb-0">Chat live with one of our support specialists.</p>
-                        </div>
-                        <div class="col">
-                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-people"></i></div>
-                            <div class="h5">Ask the community</div>
-                            <p class="text-muted mb-0">Explore our community forums and communicate with other users.</p>
-                        </div>
-                        <div class="col">
-                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-question-circle"></i></div>
-                            <div class="h5">Support center</div>
-                            <p class="text-muted mb-0">Browse FAQ's and support articles to find solutions.</p>
-                        </div>
-                        <div class="col">
-                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-telephone"></i></div>
-                            <div class="h5">Call us</div>
-                            <p class="text-muted mb-0">Call us during normal business hours at (555) 892-9403.</p>
-                        </div>
-                    </div> -->
             </div>
         </section>
     </main>
@@ -155,6 +142,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
+    <script src="js/cart.js"></script>
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <!-- * *                               SB Forms JS                               * *-->
     <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
