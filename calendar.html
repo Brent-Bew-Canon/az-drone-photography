@@ -12,45 +12,35 @@
 
 <body>
     <div class="contianer">
-
-        <!-- Button trigger modal -->
-        <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            Launch static backdrop modal
-        </button> -->
-
         <!-- Modal -->
-        <div class="modal fade" id="day-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        ...
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Understood</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <div class="modal" tabindex="-1" id="mymodal">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Modal title</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <h5 class="modal-title"></h5>
+                        <button type="button" class="btn-close modal-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <p>Modal body text goes here.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <p>Select a time</p>
+                        <form action="php/form.php" id="schedule-time">
+                            <select id="time" class="form-select" required>
+                                <option selected value="0">*Select a time slot</option>
+                                <option id="ten" value="10">10 am</option>
+                                <option id="eleven" value="11">11 am</option>
+                                <option id="noon" value="12">12 pm</option>
+                                <option id="one" value="1">1 pm</option>
+                                <option id="two" value="2">2 pm</option>
+                                <option id="three" value="3">3 pm</option>
+                                <option id="four" value="4">4 pm</option>
+                                <option id="five" value="5">5 pm</option>
+                                <option id="six" value="100">other</option>
+                            </select>
+                            <div class="modal-footer">
+                                <button id="schedule-btn" type="button" class="btn btn-primary schedule">Schedule
+                                    Time</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

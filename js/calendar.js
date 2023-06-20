@@ -127,13 +127,37 @@ const currentDateFormate = new Intl.DateTimeFormat(
 
 
 
-// Select the day
+// Choosing a time slot on calendar
+const title = document.querySelector('.modal-title')
+const myModal = new bootstrap.Modal(document.getElementById('mymodal'))
+const scheduleTime = document.querySelector('#schedule-btn')
+const timeSelect = document.querySelector('#time')
+const timeForm = document.querySelector('#schedule-time')
+let selectedDay = ""
+let selectedMonth = ""
 
+//show modal with month and day upon clicking
 document.addEventListener("click", e => {
-    if (e.target.matches("a")) {
-        let month = e.target.parentElement.parentElement.previousElementSibling.children[0].innerHTML
-        console.log(`You have selected ${month} ${e.target.innerHTML}`)
-        const myModal = new bootstrap.Modal(document.getElementById('mymodal'))
+    if (e.target.matches("a") && e.target.innerHTML) {
+        selectedMonth = e.target.parentElement.parentElement.previousElementSibling.children[0].innerHTML
+        selectedDay = e.target.innerHTML
+        title.innerHTML = `${selectedMonth} ${selectedDay}`
         myModal.show();
+    }
+})
+
+//only accept form and hide modal if time slot selected
+document.addEventListener("click", e => {
+    if (e.target.matches('.schedule') && timeSelect.value > 0) {
+        console.log(timeSelect.value);
+        myModal.hide();
+        timeForm.submit()
+    }
+})
+
+//reset modal form if close modal
+document.addEventListener("click", e => {
+    if (e.target.matches('.modal-close')) {
+        timeForm.reset()
     }
 })
