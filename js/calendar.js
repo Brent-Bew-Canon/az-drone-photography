@@ -133,6 +133,8 @@ const myModal = new bootstrap.Modal(document.getElementById('mymodal'))
 const scheduleTime = document.querySelector('#schedule-btn')
 const timeSelect = document.querySelector('#time')
 const timeForm = document.querySelector('#schedule-time')
+const formMonth = document.querySelector('#month')
+const formDay = document.querySelector('#day')
 let selectedDay = ""
 let selectedMonth = ""
 
@@ -150,6 +152,9 @@ document.addEventListener("click", e => {
 document.addEventListener("click", e => {
     if (e.target.matches('.schedule') && timeSelect.value > 0) {
         console.log(timeSelect.value);
+        //set month and date values on form
+        formMonth = selectedMonth
+        formDay = selectedDay
         myModal.hide();
         timeForm.submit()
     }
