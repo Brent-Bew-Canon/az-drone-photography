@@ -172,7 +172,6 @@ document.addEventListener("click", e => {
     if (e.target.matches('.schedule') && timeSelect.value > 0) {
         console.log(timeSelect.value);
         //set month and date values on form
-        // formMonth.value = selectedMonth
         formMonth.value = selectedMonth
         formDay.value = selectedDay
         //grab name, email, and service from URL and add to form
