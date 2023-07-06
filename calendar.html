@@ -23,7 +23,7 @@
                     </div>
                     <div class="modal-body">
                         <p>Select a time</p>
-                        <form action="php/form.php" id="schedule-time">
+                        <form action="" id="schedule-time" method="">
                             <select id="time" name="time" class="form-select" required>
                                 <option selected value="0">*Select a time slot</option>
                                 <option id="ten" value="10">10 am</option>
@@ -38,6 +38,10 @@
                             </select>
                             <input type="text" id="month" name="month" style="display: none;">
                             <input type="text" id="day" name="day" style="display: none;">
+                            <input type="text" id="name" name="name" style="display: none;">
+                            <input type="text" id="email" name="email" style="display: none;">
+                            <input type="text" id="service" name="service" style="display: none;">
+                            <input type="text" id="redirect" name="redirect" style="display: none;">
                             <div class="modal-footer">
                                 <button id="schedule-btn" type="button" class="btn btn-primary schedule">Schedule
                                     Time</button>

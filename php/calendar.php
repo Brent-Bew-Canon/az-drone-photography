@@ -14,25 +14,23 @@ if ($link->connect_error) {
 
 // Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $photos = $_POST['photos'];
+    $service = $_POST['service'];
     $name = $_POST['name'];
     $email = $_POST['email'];
-    $phone = $_POST['phone'];
-    $message = $_POST['message'];
+    $month = $_POST['month'];
+    $day = $_POST['day'];
+    $redirect = $_POST['redirect'];
 
     // Prepare the SQL statement
-    $stmt = $link->prepare("INSERT INTO cart (service, name, email, phone, message) VALUES (?, ?, ?, ?, ?)");
+    $stmt = $link->prepare("INSERT INTO calendar (service, name, email, month, day, redirect) VALUES (?, ?, ?, ?, ?, ?)");
 
     // Bind the values to the parameters
-    $stmt->bind_param("sssss", $photos, $name, $email, $phone, $message);
+    $stmt->bind_param("ssssss", $service, $name, $email, $month, $day, $redirect);
 
     // Execute the prepared statement
     if ($stmt->execute()) {
-        $url = "https://www.azdronephotography.com/calendar.html";
-        $url .= "?name=" . urlencode($name);
-        $url .= "&email=" . urlencode($email);
-        $url .= "&service=" . urlencode($photos);
-        header("Location:  $url");
+        //TODO: make this redirect to the correct payment page
+        header("Location:  $redirect");
     } else {
         echo "There has been an error: " . $stmt->error;
     }

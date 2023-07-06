@@ -135,6 +135,10 @@ const timeSelect = document.querySelector('#time')
 const timeForm = document.querySelector('#schedule-time')
 const formMonth = document.querySelector('#month')
 const formDay = document.querySelector('#day')
+const formName = document.querySelector('#name')
+const formEmail = document.querySelector('#email')
+const formService = document.querySelector('#service')
+const formRedirect = document.querySelector('#redirect')
 let selectedDay = ""
 let selectedMonth = ""
 
@@ -155,6 +159,20 @@ document.addEventListener("click", e => {
         //set month and date values on form
         formMonth.value = selectedMonth
         formDay.value = selectedDay
+        //grab name, email, and service from URL and add to form
+        let url = document.location.href
+        if (url.split('=').length == 4) {
+            let name = url.split('=')[1]
+            name = name.split('&')[0]
+            let email = url.split('=')[2]
+            email = email.split('&')[0]
+            let service = url.split('=')[3]
+            let redirect = findRedirect(service)
+            formRedirect.value = redirect
+            formService.value = service
+            formName.value = name
+            formEmail.value = email
+        }
         myModal.hide();
         timeForm.submit()
     }
@@ -166,3 +184,13 @@ document.addEventListener("click", e => {
         timeForm.reset()
     }
 })
+
+function findRedirect(service) {
+    if (service == 1) {
+        return 'https://buy.stripe.com/aEU4gO15Ve295UY8ww'
+    } else if (service == 2) {
+        return 'https://buy.stripe.com/bIY00y7uj5vD4QU6op'
+    } else if (service == 3) {
+        return 'https://buy.stripe.com/00gdRo5mbcY55UY3ce'
+    }
+}
