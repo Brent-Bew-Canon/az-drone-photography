@@ -49,12 +49,12 @@
                     </div>
                     <div class="row gx-5 justify-content-center">
                         <div class="col-lg-8 col-xl-6">
-                            <form id="checkout">
+                            <form id="checkout" action="php/cart.php" method="POST">
                                 <!-- Service input-->
                                 <div class=" mb-3">
                                     <label class="ps-1" for="photos">*Select a Service</label>
-                                    <select id="photos" class="form-select" aria-label="Default select example"
-                                        required>
+                                    <select id="photos" name="photos" class="form-select"
+                                        aria-label="Default select example" required>
                                         <option selected value="0">Select a service</option>
                                         <option id="drone-8" value="1">8 Drone Photos</option>
                                         <option id="15drone" value="2">15 Drone Photos</option>
@@ -63,25 +63,25 @@
                                 </div>
                                 <!-- Name input-->
                                 <div class="form-floating mb-3">
-                                    <input class="form-control" id="name" type="text" placeholder="Enter your name..."
-                                        required />
+                                    <input class="form-control" id="name" name="name" type="text"
+                                        placeholder="Enter your name..." required />
                                     <label for="name">*Full name</label>
                                 </div>
                                 <!-- Email address input-->
                                 <div class="form-floating mb-3">
-                                    <input class="form-control" id="email" type="email" placeholder="name@example.com"
-                                        required />
+                                    <input class="form-control" id="email" name="email" type="email"
+                                        placeholder="name@example.com" required />
                                     <label for="email">*Email address</label>
                                 </div>
                                 <!-- Phone number input-->
                                 <div class="form-floating mb-3">
-                                    <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890"
-                                        required />
+                                    <input class="form-control" id="phone" name="phone" type="tel"
+                                        placeholder="(123) 456-7890" required />
                                     <label for="phone">*Phone number</label>
                                 </div>
                                 <!-- Message input-->
                                 <div class="form-floating mb-3">
-                                    <textarea class="form-control" id="message" type="text"
+                                    <textarea class="form-control" id="message" name="message" type="text"
                                         placeholder="Enter your message here..." style="height: 10rem"></textarea>
                                     <label for="message">Message (Optional) </label>
                                 </div>

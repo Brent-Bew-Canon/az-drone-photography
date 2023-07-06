@@ -153,8 +153,8 @@ document.addEventListener("click", e => {
     if (e.target.matches('.schedule') && timeSelect.value > 0) {
         console.log(timeSelect.value);
         //set month and date values on form
-        formMonth = selectedMonth
-        formDay = selectedDay
+        formMonth.value = selectedMonth
+        formDay.value = selectedDay
         myModal.hide();
         timeForm.submit()
     }
