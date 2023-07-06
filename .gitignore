@@ -3,3 +3,4 @@ info.txt
 package-lock.json
 .htaccess
 .env
+node_modules
