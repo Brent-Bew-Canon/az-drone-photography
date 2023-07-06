@@ -14,18 +14,19 @@ if ($link->connect_error) {
 
 // Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $service = $_POST['service'];
-    $name = $_POST['name'];
-    $email = $_POST['email'];
     $month = $_POST['month'];
     $day = $_POST['day'];
+    $time = $_POST['time'];
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $service = $_POST['service'];
     $redirect = $_POST['redirect'];
 
     // Prepare the SQL statement
-    $stmt = $link->prepare("INSERT INTO calendar (service, name, email, month, day, redirect) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt = $link->prepare("INSERT INTO calendar (month, day, time, name, email, service, redirect) VALUES (?, ?, ?, ?, ?, ?, ?)");
 
     // Bind the values to the parameters
-    $stmt->bind_param("ssssss", $service, $name, $email, $month, $day, $redirect);
+    $stmt->bind_param("sssssss", $month, $day, $time, $name, $email, $service, $redirect);
 
     // Execute the prepared statement
     if ($stmt->execute()) {

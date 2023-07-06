@@ -141,6 +141,10 @@ const formService = document.querySelector('#service')
 const formRedirect = document.querySelector('#redirect')
 let selectedDay = ""
 let selectedMonth = ""
+let name = ""
+let email = ""
+let service = ""
+let redirect = ""
 
 //show modal with month and day upon clicking
 document.addEventListener("click", e => {
@@ -152,26 +156,44 @@ document.addEventListener("click", e => {
     }
 })
 
+//identify correct redirect link
+function findRedirect(service) {
+    if (service == 1) {
+        return 'https://buy.stripe.com/aEU4gO15Ve295UY8ww'
+    } else if (service == 2) {
+        return 'https://buy.stripe.com/bIY00y7uj5vD4QU6op'
+    } else if (service == 3) {
+        return 'https://buy.stripe.com/00gdRo5mbcY55UY3ce'
+    }
+}
+
 //only accept form and hide modal if time slot selected
 document.addEventListener("click", e => {
     if (e.target.matches('.schedule') && timeSelect.value > 0) {
         console.log(timeSelect.value);
         //set month and date values on form
+        // formMonth.value = selectedMonth
         formMonth.value = selectedMonth
         formDay.value = selectedDay
         //grab name, email, and service from URL and add to form
         let url = document.location.href
         if (url.split('=').length == 4) {
-            let name = url.split('=')[1]
+            name = url.split('=')[1]
             name = name.split('&')[0]
-            let email = url.split('=')[2]
+            email = url.split('=')[2]
             email = email.split('&')[0]
-            let service = url.split('=')[3]
-            let redirect = findRedirect(service)
+            service = url.split('=')[3]
+            redirect = findRedirect(service)
             formRedirect.value = redirect
             formService.value = service
             formName.value = name
             formEmail.value = email
+        }
+        else {
+            formRedirect.value = 'none'
+            formService.value = 'none'
+            formName.value = 'none'
+            formEmail.value = 'none'
         }
         myModal.hide();
         timeForm.submit()
@@ -185,12 +207,3 @@ document.addEventListener("click", e => {
     }
 })
 
-function findRedirect(service) {
-    if (service == 1) {
-        return 'https://buy.stripe.com/aEU4gO15Ve295UY8ww'
-    } else if (service == 2) {
-        return 'https://buy.stripe.com/bIY00y7uj5vD4QU6op'
-    } else if (service == 3) {
-        return 'https://buy.stripe.com/00gdRo5mbcY55UY3ce'
-    }
-}
