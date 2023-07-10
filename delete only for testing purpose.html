@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Send Mail</title>
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+
+    <script type="text/javascript">
+        function sendEmail() {
+            Email.send({
+                SecureToken: "a65e13c0-37c8-41e0-9a6d-51f215fdcf8e",
+                // Password: "7043921F81AAC2958A6654CC3FB543F115CC",
+                To: 'babuchanan1@gmail.com',
+                From: "mrbuchmas@gmail.com",
+                Subject: "Using new token...",
+                Body: "Well that was easy!!",
+            })
+                .then(function (message) {
+                    alert("mail sent successfully")
+                });
+        }
+    </script>
+</head>
+
+<body>
+    <form method="post">
+        <input type="button" value="Send Email" onclick="sendEmail()" />
+    </form>
+</body>
+
+</html>
