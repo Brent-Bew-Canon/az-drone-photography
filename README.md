@@ -10,5 +10,5 @@ Licensed under the The MIT License
   
 
 ## Live Link
-https://brent-bew-canon.github.io/az-drone-photography/index.html
+https://www.azdronephotography.com
                       
