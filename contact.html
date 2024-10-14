@@ -86,9 +86,18 @@
                                 </div>
                                 <!-- Message input-->
                                 <div class="form-floating mb-3">
-                                    <textarea class="form-control" id="message" name="message" type="text" required
+                                    <textarea class="form-control" id="message" name="message"
+                                        placeholder="Please tell us more details..." type="text" required
                                         style="height: 10rem"></textarea>
                                     <label for="message">Message</label>
+                                </div>
+                                <!-- Final Question -->
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="final" name="final" type="number" required />
+                                    <label for="final">What is 6 + 4? </label>
+
+                                    <div class="invalid-feedback">It's ten
+                                    </div>
                                 </div>
                                 <!-- Submit Button-->
                                 <div class="d-grid"><button class="btn btn-primary btn-lg " id="submit" name="submit"

@@ -2,14 +2,14 @@
 $host = 'db5013637590.hosting-data.io';
 $database = 'dbs11422374';
 $username = 'dbu1053453';
-$password = 'DronesRUs6^@^8135';
+$password = '8jECMK9XdCw&Tdq';
 
 // Create a new mysqli instance
 $link = new mysqli($host, $username, $password, $database);
 
 // Check the connection
 if ($link->connect_error) {
-    die('Connect Error: ' . $link->connect_error);
+    die ('Connect Error: ' . $link->connect_error);
 }
 
 // Check if the form is submitted

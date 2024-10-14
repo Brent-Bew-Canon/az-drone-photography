@@ -1,3 +1,5 @@
+
+
 const isLeapYear = (year) => {
     return (
         (year % 4 === 0 && year % 100 !== 0 && year % 400 !== 0) ||
@@ -168,7 +170,7 @@ function findRedirect(service) {
 }
 
 //only accept form and hide modal if time slot selected
-document.addEventListener("click", e => {
+document.addEventListener("click", async (e) => {
     if (e.target.matches('.schedule') && timeSelect.value > 0) {
         console.log(timeSelect.value);
         //set month and date values on form
@@ -195,9 +197,28 @@ document.addEventListener("click", e => {
             formEmail.value = 'none'
         }
         myModal.hide();
-        timeForm.submit()
+        sendEmail()
+        setTimeout(() => {
+            timeForm.submit()
+        }, 500);
+
     }
 })
+
+function sendEmail() {
+    emailjs.init("EOQFOg3RWFJkVS2yX");
+
+    const templateParams = {
+        name: formName.value,
+        email: formEmail.value,
+        service: formService.value,
+        month: formMonth.value,
+        day: formDay.value,
+        time: timeSelect.value
+    };
+
+    emailjs.send("service_grjzm79", "template_w44beca", templateParams);
+}
 
 //reset modal form if close modal
 document.addEventListener("click", e => {
